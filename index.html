@@ -302,4 +302,814 @@ button{font-family:var(--fb);cursor:none;border:none;background:none}
 .price-amt sup{font-size:1.3rem;margin-top:.6rem}
 .price-note{font-size:.66rem;color:var(--fog);margin-top:.4rem;margin-bottom:2rem;letter-spacing:.05em}
 .price-hr{height:1px;background:rgba(255,255,255,.05);margin:1.5rem 0}
-.price-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-bottom:2.
+.price-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-bottom:2.2rem}
+.price-list li{font-size:.8rem;color:var(--mist);display:flex;align-items:flex-start;gap:.8rem}
+.price-list li::before{content:'✦';color:var(--gold);font-size:.55rem;margin-top:.25rem;flex-shrink:0}
+.price-btn{display:block;width:100%;text-align:center;padding:.88rem;
+  font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;
+  border:1px solid rgba(196,151,74,.35);color:var(--gold);
+  position:relative;overflow:hidden;transition:border-color .3s}
+.price-btn::before{content:'';position:absolute;inset:0;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;transition:transform .4s var(--eout)}
+.price-btn span{position:relative;z-index:1;transition:color .4s}
+.price-btn:hover::before,.price-card.feat .price-btn::before{transform:scaleX(1)}
+.price-btn:hover span,.price-card.feat .price-btn span{color:var(--void)}
+
+/* ══════════════════════════════════════════
+   TESTIMONIALS
+══════════════════════════════════════════ */
+#testimonials{background:var(--void2);overflow:hidden}
+.testi-wrap{max-width:1280px;margin:0 auto}
+.testi-slider{overflow:hidden}
+.testi-track{display:flex;gap:1.5rem;will-change:transform}
+.testi-card{flex:0 0 calc(33.333% - 1rem);background:var(--void3);
+  border:1px solid rgba(196,151,74,.06);padding:2.8rem;
+  position:relative;overflow:hidden;transition:border-color .4s}
+.testi-card:hover{border-color:rgba(196,151,74,.2)}
+.testi-card::after{content:'\201C';position:absolute;top:.3rem;right:1.2rem;
+  font-family:var(--fh);font-size:9rem;font-weight:200;color:rgba(196,151,74,.05);line-height:1}
+.testi-stars{color:var(--gold);font-size:.78rem;letter-spacing:.1em;margin-bottom:1.3rem}
+.testi-q{font-family:var(--fh);font-style:italic;font-weight:200;
+  font-size:1.05rem;line-height:1.7;color:var(--cream);margin-bottom:1.8rem}
+.testi-author{display:flex;align-items:center;gap:.9rem}
+.testi-av{width:44px;height:44px;border-radius:50%;flex-shrink:0;
+  background:var(--void4);border:1px solid rgba(196,151,74,.25);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--fh);font-size:1.1rem;color:var(--gold)}
+.testi-name{font-size:.82rem;color:var(--cream);font-weight:400}
+.testi-role{font-size:.64rem;color:var(--fog);margin-top:.15rem;letter-spacing:.06em}
+.testi-ctrl{display:flex;align-items:center;gap:1.2rem;margin-top:3rem}
+.testi-btn{width:44px;height:44px;border:1px solid rgba(196,151,74,.25);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .3s}
+.testi-btn:hover{background:var(--gold);color:var(--void);border-color:var(--gold)}
+.testi-prog-wrap{flex:1;height:1px;background:rgba(255,255,255,.05);position:relative}
+.testi-prog{position:absolute;left:0;top:0;bottom:0;background:var(--gold);width:0;transition:width .8s var(--eout)}
+
+/* ══════════════════════════════════════════
+   ABOUT
+══════════════════════════════════════════ */
+#about{padding:0;background:var(--void3)}
+.about-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:5fr 7fr;min-height:760px}
+.about-img{position:relative;overflow:hidden}
+.about-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.8) saturate(.78);transition:transform 1.2s var(--eout)}
+.about-img:hover img{transform:scale(1.04)}
+.about-chip{position:absolute;top:3rem;left:-1px;
+  background:var(--void3);border:1px solid rgba(196,151,74,.2);padding:1rem 1.5rem;
+  display:flex;align-items:center;gap:.6rem;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.avdot{width:6px;height:6px;border-radius:50%;background:#4caf50;animation:blink 2s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.about-badge{position:absolute;bottom:3rem;right:-1px;
+  background:var(--void3);border:1px solid rgba(196,151,74,.22);padding:1.5rem 1.8rem}
+.about-badge strong{display:block;font-family:var(--fh);font-size:2.6rem;font-weight:200;color:var(--gold);line-height:1}
+.about-badge span{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--fog)}
+.about-text{padding:8rem 5rem;display:flex;flex-direction:column;justify-content:center}
+.about-text p{font-size:.87rem;color:var(--mist);line-height:1.95;margin-bottom:1.1rem;font-weight:300}
+.about-pull{font-family:var(--fh);font-style:italic;font-weight:200;
+  font-size:1.3rem;line-height:1.55;color:var(--cream);
+  border-left:2px solid var(--gold);padding-left:1.5rem;margin:2rem 0}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
+.atag{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);border:1px solid rgba(196,151,74,.22);padding:.3rem .85rem;
+  transition:all .3s}
+.atag:hover{background:rgba(196,151,74,.08);border-color:rgba(196,151,74,.45)}
+
+/* ══════════════════════════════════════════
+   CONTACT
+══════════════════════════════════════════ */
+#contact{background:var(--void)}
+.contact-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:7rem}
+.c-block{margin-bottom:2.2rem}
+.c-lbl{font-size:.57rem;letter-spacing:.2em;text-transform:uppercase;color:var(--fog);display:block;margin-bottom:.3rem}
+.c-val{font-size:.87rem;color:var(--mist);line-height:1.8}
+.c-val a{color:var(--mist);transition:color .3s}.c-val a:hover{color:var(--gold2)}
+.wa-btn{display:inline-flex;align-items:center;gap:.8rem;background:#25D366;color:#fff;
+  padding:.7rem 1.55rem;font-size:.72rem;letter-spacing:.1em;margin-top:.6rem;transition:all .3s}
+.wa-btn:hover{background:#1db954;transform:translateY(-2px)}
+.map-wrap{height:200px;overflow:hidden;border:1px solid rgba(196,151,74,.1);margin-top:2rem}
+.map-wrap iframe{width:100%;height:100%;border:none;filter:grayscale(50%) brightness(.72) contrast(1.1)}
+.socials{display:flex;gap:.8rem;margin-top:2.5rem}
+.sico{width:38px;height:38px;border:1px solid rgba(196,151,74,.18);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.78rem;color:var(--fog);transition:all .3s}
+.sico:hover{border-color:var(--gold);color:var(--gold)}
+.cform{display:flex;flex-direction:column;gap:1.1rem}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.fg{display:flex;flex-direction:column;gap:.32rem}
+.fg label{font-size:.57rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fog)}
+.fg input,.fg select,.fg textarea{background:var(--void3);border:1px solid rgba(255,255,255,.05);
+  color:var(--cream);padding:.85rem 1rem;font-family:var(--fb);font-size:.85rem;font-weight:300;
+  outline:none;resize:none;transition:border-color .3s,background .3s}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--fog)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:rgba(196,151,74,.45);background:var(--void4)}
+.fg select option{background:var(--void3)}
+.f-btn{background:var(--gold);color:var(--void);padding:1rem 2.4rem;font-size:.68rem;
+  letter-spacing:.18em;text-transform:uppercase;font-weight:500;align-self:flex-start;
+  position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.f-btn::before{content:'';position:absolute;inset:0;background:var(--gold3);
+  transform:scaleX(0);transform-origin:left;transition:transform .4s var(--eout)}
+.f-btn span{position:relative;z-index:1}
+.f-btn:hover::before{transform:scaleX(1)}
+.f-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(196,151,74,.25)}
+.f-ok{display:none;padding:1rem 1.2rem;border:1px solid rgba(196,151,74,.25);color:var(--gold);font-size:.82rem}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer{background:var(--void2);border-top:1px solid rgba(196,151,74,.1);padding:6rem 4.5rem 3rem}
+.foot-top{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;
+  padding-bottom:4rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.f-logo-txt{font-family:var(--fh);font-size:1.5rem;font-weight:200;color:var(--cream);margin-bottom:.9rem}
+.f-logo-txt em{font-style:italic;color:var(--gold2)}
+.f-tagline{font-size:.76rem;color:var(--fog);line-height:1.85;max-width:255px}
+.f-col h6{font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.f-col ul a{font-size:.76rem;color:var(--fog);transition:color .3s}
+.f-col ul a:hover{color:var(--cream)}
+.foot-btm{max-width:1280px;margin:2.5rem auto 0;display:flex;
+  justify-content:space-between;align-items:center;font-size:.64rem;color:var(--fog)}
+.foot-btm a{color:var(--gold)}
+
+/* ══════════════════════════════════════════
+   REVEAL
+══════════════════════════════════════════ */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .9s var(--eout),transform .9s var(--eout)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media(max-width:1100px){
+  .sec,.stats-bar{padding:7rem 3rem}
+  #nav,#nav.stuck{padding-left:3rem;padding-right:3rem}
+  .svc-grid{grid-template-columns:1fr}
+  .svc-big{grid-row:auto;min-height:420px}
+  .svc-extras{grid-template-columns:1fr 1fr}
+  .pricing-grid{grid-template-columns:1fr;max-width:440px}
+  .about-grid{grid-template-columns:1fr}
+  .about-img{height:460px}
+  .about-text{padding:5rem 3rem}
+  .contact-grid{grid-template-columns:1fr;gap:4rem}
+  .foot-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .proc-grid{grid-template-columns:1fr 1fr}
+  .hero-inner{padding:0 3rem 4rem}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}.ham{display:flex}
+  .sec{padding:5rem 1.5rem}.stats-bar{padding:3.5rem 1.5rem}
+  #nav,#nav.stuck{padding:1rem 1.5rem}
+  .hero-inner{padding:0 1.5rem 3rem}
+  .hero-bottom{flex-direction:column;align-items:flex-start;gap:2rem}
+  .pc{width:80vw !important;height:58vw !important;margin-top:0 !important}
+  #portTrack{padding:0 1.5rem}
+  .testi-card{flex:0 0 calc(100% - .5rem)}
+  .f2{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .foot-btm{flex-direction:column;gap:.8rem;text-align:center}
+  .proc-grid{grid-template-columns:1fr}
+  footer{padding:4rem 1.5rem 2rem}
+  .hero-scroll{display:none}
+  .about-text{padding:3.5rem 1.5rem}
+  .mq-wrap{display:none}
+  .port-intro{padding:5rem 1.5rem 2rem}
+}
+</style>
+</head>
+<body>
+
+<div id="grain" aria-hidden="true"></div>
+<div class="cur-dot" id="cDot" aria-hidden="true"></div>
+<div class="cur-ring" id="cRing" aria-hidden="true"></div>
+
+<!-- LOADER -->
+<div id="loader" aria-hidden="true">
+  <div class="ld-logo">
+    <span id="lw1">Mega&nbsp;</span><em id="lw2">Digital</em><span id="lw3">&nbsp;Studios</span>
+  </div>
+  <div class="ld-bar-bg"><div class="ld-bar" id="ldBar"></div></div>
+  <div class="ld-pct" id="ldPct">0%</div>
+</div>
+
+<!-- NAV -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <a href="#hero" class="nav-brand">Mega <em>Digital</em> Studios</a>
+  <ul class="nav-links">
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book a Session</a>
+  <button class="ham" id="ham" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-menu" id="mobMenu" role="dialog">
+  <a href="#portfolio" class="ml">Portfolio</a>
+  <a href="#services" class="ml">Services</a>
+  <a href="#pricing" class="ml">Pricing</a>
+  <a href="#about" class="ml">About</a>
+  <a href="#contact" class="ml">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero" aria-label="Hero — Mega Digital Studios">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <span class="hero-side" aria-hidden="true">Port Blair · Andaman &amp; Nicobar Islands · Est. 2012</span>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Premium Photography Studio</div>
+    <h1 class="hero-h1" id="heroH1">
+      <span class="ln"><span class="wd">Where</span> <span class="wd">Every</span></span>
+      <span class="ln"><span class="wd">Frame</span> <span class="wd">Becomes</span></span>
+      <span class="ln"><span class="wd">a</span> <em class="wd">Legacy.</em></span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-sub"><span class="hero-sub-in">Award-winning photography &amp; cinematic storytelling — capturing weddings, portraits, and life's rarest moments across the Andaman Islands.</span></p>
+      <div class="hero-btns">
+        <a href="#portfolio" class="btn-primary"><span>View Portfolio</span></a>
+        <a href="#contact" class="btn-secondary">Book a Session</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><div class="hero-scroll-bar"></div><span>Scroll</span></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq-wrap" aria-hidden="true">
+  <div class="mq-track">
+    <span>Wedding Photography <b>✦</b> Drone Shoots <b>✦</b> Portraits <b>✦</b> Maternity <b>✦</b> Fashion &amp; Editorial <b>✦</b> Events <b>✦</b> Newborn <b>✦</b> Commercial <b>✦</b> Videography <b>✦</b> Product Photography <b>✦</b></span>
+    <span aria-hidden="true">Wedding Photography <b>✦</b> Drone Shoots <b>✦</b> Portraits <b>✦</b> Maternity <b>✦</b> Fashion &amp; Editorial <b>✦</b> Events <b>✦</b> Newborn <b>✦</b> Commercial <b>✦</b> Videography <b>✦</b> Product Photography <b>✦</b></span>
+  </div>
+</div>
+
+<!-- PORTFOLIO -->
+<div id="portfolio">
+  <div class="port-intro rv">
+    <span class="s-tag">Our Work</span>
+    <h2 class="s-h">Curated <em>Portfolio</em></h2>
+    <div class="s-rule"></div>
+    <p class="s-desc">Each image is a chapter — composed with intent, lit with precision, crafted to outlast the moment it was taken.</p>
+    <div class="port-hint rv d1"><span class="port-arrow-ic">→</span><span>Drag or scroll to explore</span></div>
+  </div>
+  <div id="portOuter">
+    <div id="portSticky">
+      <div id="portTrack">
+        <div class="pc" data-title="Eternal Vows" data-cat="Wedding Photography" onclick="openLb(this)">
+          <span class="pc-n">01</span>
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=85" alt="Wedding ceremony photography Port Blair" loading="lazy"/>
+          <div class="pc-ol"><div class="pc-info"><span>Wedding</span><h4>Eternal Vows</h4></div></div>
+        </div>
+        <div class="pc" data-title="Timeless Grace" data-cat="Bridal Portrait" onclick="openLb(this)">
+          <span class="pc-n">02</span>
+          <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=900&q=85" alt="Bridal portrait session" loading="lazy"/>
+          <div class="pc-ol"><div class="pc-info"><span>Portrait</span><h4>Timeless Grace</h4></div></div>
+        </div>
+        <div class="pc" data-title="Andaman Skies" data-cat="Aerial Drone Photography" onclick="openLb(this)">
+          <span class="pc-n">03</span>
+          <img src="https://images.unsplash.com/photo-1504691342899-4d92b50853e1?w=1100&q=85" alt="Aerial drone photography Andaman Islands" loading="lazy"/>
+          <div class="pc-ol"><div class="pc-info"><span>Drone</span><h4>Andaman Skies</h4></div></div>
+        </div>
+        <div class="pc" data-title="First Light" data-cat="Newborn Photography" onclick="openLb(this)">
+          <span class="pc-n">04</span>
+          <img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=800&q=85" alt="Newborn photography session" loading="lazy"/>
+          <div class="pc-ol"><div class="pc-info"><span>Newborn</span><h4>First Light</h4></div></div>
+        </div>
+        <div class="pc" data-title="Grand Revelry" data-cat="Events Photography" onclick="openLb(this)">
+          <span class="pc-n">05</span>
+          <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=1200&q=85" alt="Event photography Andaman" loading="lazy"/>
+          <div class="pc-ol"><div class="pc-info"><span>Events</span><h4>Grand Revelry</h4></div></div>
+        </div>
+        <div class="pc" data-title="Editorial Vision" data-cat="Fashion Photography" onclick="openLb(this)">
+          <span class="pc-n">06</span>
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=900&q=85" alt="Fashion editorial photography" loading="lazy"/>
+          <div class="pc-ol"><div class="pc-info"><span>Fashion</span><h4>Editorial Vision</h4></div></div>
+        </div>
+        <div class="pc" data-title="Golden Hours" data-cat="Maternity Photography" onclick="openLb(this)">
+          <span class="pc-n">07</span>
+          <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=900&q=85" alt="Maternity photography session" loading="lazy"/>
+          <div class="pc-ol"><div class="pc-info"><span>Maternity</span><h4>Golden Hours</h4></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image lightbox">
+  <button class="lb-x" onclick="closeLb()" aria-label="Close">✕</button>
+  <img id="lbImg" src="" alt="Enlarged photo"/>
+  <p class="lb-cap" id="lbCap"></p>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar" role="region" aria-label="Studio statistics">
+  <div class="stats-inner">
+    <div class="stat rv"><span class="s-big" data-n="500" data-s="+">0</span><span class="s-lbl">Happy Clients</span></div>
+    <div class="stat rv d1"><span class="s-big" data-n="12" data-s="+">0</span><span class="s-lbl">Years Experience</span></div>
+    <div class="stat rv d2"><span class="s-big" data-n="4.7" data-s="★" data-d="1">0</span><span class="s-lbl">Average Rating</span></div>
+    <div class="stat rv d3"><span class="s-big" data-n="24" data-s="/7">0</span><span class="s-lbl">Hours Available</span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="sec" aria-labelledby="svc-h">
+  <div class="s-hd ctr rv">
+    <span class="s-tag">What We Do</span>
+    <h2 class="s-h" id="svc-h">Our <em>Specialties</em></h2>
+    <div class="s-rule c"></div>
+    <p class="s-desc">From intimate portraits to grand cinematic weddings — expertise, artistry, and passion in every single frame we make.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-big rv">
+      <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=900&q=85" alt="Wedding photography" loading="lazy"/>
+      <div class="svc-body">
+        <span class="svc-num">01</span><span class="svc-cat">Signature Service</span>
+        <h3>Wedding Photography</h3>
+        <p>Full-day cinematic coverage from first look to final dance — crafted into a timeless narrative that honours every emotion and sacred detail of your wedding.</p>
+        <div class="svc-line"></div>
+      </div>
+    </div>
+    <div class="svc-sm rv d1">
+      <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=700&q=85" alt="Events photography" loading="lazy"/>
+      <div class="svc-body">
+        <span class="svc-num">02</span><span class="svc-cat">Events</span>
+        <h3>Events &amp; Occasions</h3>
+        <p>Birthdays, engagements, corporate events — every milestone documented with professional elegance.</p>
+        <div class="svc-line"></div>
+      </div>
+    </div>
+    <div class="svc-sm rv d2">
+      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=700&q=85" alt="Portrait photography" loading="lazy"/>
+      <div class="svc-body">
+        <span class="svc-num">03</span><span class="svc-cat">Portraits</span>
+        <h3>Portraits &amp; Fashion</h3>
+        <p>Editorial-quality imagery for personal branding, modelling books, and magazine-style features.</p>
+        <div class="svc-line"></div>
+      </div>
+    </div>
+  </div>
+  <div class="svc-extras">
+    <div class="svc-ex rv"><div class="svc-ex-ico">🚁</div><h4>Drone &amp; Aerial</h4><p>Breathtaking aerial footage over Andaman's pristine seascapes</p></div>
+    <div class="svc-ex rv d1"><div class="svc-ex-ico">🤱</div><h4>Maternity &amp; Newborn</h4><p>Tender, natural sessions capturing life's earliest precious moments</p></div>
+    <div class="svc-ex rv d2"><div class="svc-ex-ico">👗</div><h4>Fashion &amp; Editorial</h4><p>Magazine-worthy imagery for models, designers &amp; creative brands</p></div>
+    <div class="svc-ex rv d3"><div class="svc-ex-ico">🎬</div><h4>Videography</h4><p>Cinematic films and highlight reels for weddings and all occasions</p></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="sec" style="padding-top:0;background:var(--void2)" aria-labelledby="proc-h">
+  <div class="s-hd rv" style="max-width:1280px;margin:0 auto 3rem">
+    <span class="s-tag">How We Work</span>
+    <h2 class="s-h" id="proc-h">Our <em>Process</em></h2>
+    <div class="s-rule"></div>
+  </div>
+  <div class="proc-grid">
+    <div class="proc-step rv"><span class="proc-n">01</span><h4>Consultation</h4><p>We start with a deep conversation about your vision, style, timeline, and location to plan every detail with precision.</p></div>
+    <div class="proc-step rv d1"><span class="proc-n">02</span><h4>Location Scouting</h4><p>Our team scouts the finest spots across the Andaman Islands — considering light, backdrops, and logistics for cinematic results.</p></div>
+    <div class="proc-step rv d2"><span class="proc-n">03</span><h4>The Shoot</h4><p>On the day, we blend into your event as silent storytellers — capturing raw emotion and curated beauty without interruption.</p></div>
+    <div class="proc-step rv d3"><span class="proc-n">04</span><h4>Delivery &amp; Beyond</h4><p>Meticulously edited images delivered via private gallery with instant download — plus a luxury print album for a physical heirloom.</p></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="sec" aria-labelledby="price-h">
+  <div class="s-hd ctr rv">
+    <span class="s-tag">Investment</span>
+    <h2 class="s-h" id="price-h">Transparent <em>Pricing</em></h2>
+    <div class="s-rule c"></div>
+    <p class="s-desc">Every package includes instant booking confirmation, flexible rescheduling, and zero hidden costs — ever.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card rv">
+      <span class="price-tier">Essential</span>
+      <p class="price-name">The Moment</p>
+      <div class="price-amt"><sup>₹</sup>8,999</div>
+      <p class="price-note">Starting price · fully customisable</p>
+      <div class="price-hr"></div>
+      <ul class="price-list">
+        <li>4-hour photography coverage</li><li>1 professional photographer</li>
+        <li>50+ edited digital images</li><li>Private online gallery</li>
+        <li>Portrait or events session</li><li>7-day image delivery</li>
+      </ul>
+      <a href="#contact" class="price-btn"><span>Get a Quote</span></a>
+    </div>
+    <div class="price-card feat rv d1">
+      <div class="price-badge">Most Popular</div>
+      <span class="price-tier">Premium</span>
+      <p class="price-name">The Story</p>
+      <div class="price-amt"><sup>₹</sup>24,999</div>
+      <p class="price-note">Starting price · fully customisable</p>
+      <div class="price-hr"></div>
+      <ul class="price-list">
+        <li>Full-day coverage (8 hours)</li><li>2 photographers + assistant</li>
+        <li>200+ edited digital images</li><li>Cinematic highlight video</li>
+        <li>Luxury printed photo album</li><li>Drone footage included</li>
+        <li>3-day express delivery</li>
+      </ul>
+      <a href="#contact" class="price-btn"><span>Get a Quote</span></a>
+    </div>
+    <div class="price-card rv d2">
+      <span class="price-tier">Elite</span>
+      <p class="price-name">The Legacy</p>
+      <div class="price-amt"><sup>₹</sup>49,999</div>
+      <p class="price-note">Starting price · fully customisable</p>
+      <div class="price-hr"></div>
+      <ul class="price-list">
+        <li>Multi-day full coverage</li><li>Full team of 3 professionals</li>
+        <li>Unlimited edited images</li><li>Full cinematic wedding film</li>
+        <li>Handcrafted luxury album</li><li>Aerial &amp; drone shoots</li>
+        <li>Pre-wedding session</li><li>Location scouting included</li>
+      </ul>
+      <a href="#contact" class="price-btn"><span>Get a Quote</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="sec" aria-labelledby="testi-h">
+  <div class="testi-wrap">
+    <div class="s-hd rv">
+      <span class="s-tag">Client Stories</span>
+      <h2 class="s-h" id="testi-h">Voices of <em>Trust</em></h2>
+      <div class="s-rule"></div>
+      <p class="s-desc">Rated 4.7 ★ on JustDial &amp; WedMeGood — here's what our clients share about their experience.</p>
+    </div>
+    <div class="testi-slider">
+      <div class="testi-track" id="testiTrack">
+        <div class="testi-card rv">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-q">"Our wedding photos exceeded every expectation. Every stolen glance, every tear, every joyful moment — captured with such profound artistry. These images are our most treasured possessions."</p>
+          <div class="testi-author"><div class="testi-av">P</div><div><p class="testi-name">Priya &amp; Rahul Sharma</p><p class="testi-role">Wedding · Port Blair, 2024</p></div></div>
+        </div>
+        <div class="testi-card rv d1">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-q">"The drone footage of our beach ceremony was simply cinematic. Our guests thought a film crew had arrived. Professionalism and creative vision that is truly world-class."</p>
+          <div class="testi-author"><div class="testi-av">A</div><div><p class="testi-name">Ananya Krishnan</p><p class="testi-role">Wedding · Andaman Beach, 2024</p></div></div>
+        </div>
+        <div class="testi-card rv d2">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-q">"My maternity shoot was pure magic. They made me feel completely comfortable and the photos look like pages from a fine art book. Cannot recommend them highly enough."</p>
+          <div class="testi-author"><div class="testi-av">S</div><div><p class="testi-name">Sunita Mehta</p><p class="testi-role">Maternity · Port Blair, 2023</p></div></div>
+        </div>
+        <div class="testi-card rv">
+          <div class="testi-stars">★★★★☆</div>
+          <p class="testi-q">"Our corporate event was covered with remarkable precision. Every key moment, every speaker, every detail documented beautifully. We have already booked them for our next event."</p>
+          <div class="testi-author"><div class="testi-av">R</div><div><p class="testi-name">Rajesh Nair</p><p class="testi-role">Corporate Event · Bambooflat, 2024</p></div></div>
+        </div>
+        <div class="testi-card rv d1">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-q">"The fashion editorial shoot they created for my portfolio was simply breathtaking — magazine-cover quality. Their mastery of light and composition is extraordinary."</p>
+          <div class="testi-author"><div class="testi-av">D</div><div><p class="testi-name">Deepika Rajan</p><p class="testi-role">Fashion Editorial · Andaman, 2024</p></div></div>
+        </div>
+        <div class="testi-card rv d2">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-q">"From instant booking to delivery, everything was seamless. The newborn photos of our daughter are the most beautiful images we own. A team that genuinely cares about your story."</p>
+          <div class="testi-author"><div class="testi-av">M</div><div><p class="testi-name">Meera &amp; Kiran Pillai</p><p class="testi-role">Newborn · Bambooflat, 2023</p></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-ctrl">
+      <button class="testi-btn" onclick="slideTesti(-1)" aria-label="Previous">←</button>
+      <button class="testi-btn" onclick="slideTesti(1)" aria-label="Next">→</button>
+      <div class="testi-prog-wrap"><div class="testi-prog" id="testiProg"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-h">
+  <div class="about-grid">
+    <div class="about-img rv">
+      <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1000&q=85" alt="Photographer at work in the Andaman Islands" loading="lazy"/>
+      <div class="about-chip"><span class="avdot"></span>Available 24 / 7</div>
+      <div class="about-badge"><strong>4.7</strong><span>Stars · JustDial Rating</span></div>
+    </div>
+    <div class="about-text">
+      <div class="rv">
+        <span class="s-tag">The Studio</span>
+        <h2 class="s-h" id="about-h">Crafted with <em>Passion</em></h2>
+        <div class="s-rule"></div>
+      </div>
+      <div class="rv d1">
+        <p>Mega Digital Studios is Port Blair's most trusted photography destination — located near Govt. Sr. Sec. School, Bambooflat, Stewertgunj along SH10, Port Blair 744107. Since 2012, we have been the visual storytellers for hundreds of families, couples, and businesses across the Andaman &amp; Nicobar Islands.</p>
+        <blockquote class="about-pull">"We don't just take photographs. We create heirlooms — frames that outlast fashion, trends and time itself."</blockquote>
+        <p>Our team blends technical mastery with deep artistic intuition. From soaring above Andaman's turquoise waters with drone rigs to tenderly capturing a newborn's first breath in our studio — every project receives undivided dedication. We operate 24 hours daily, 7 days a week, with instant booking confirmation and full scheduling flexibility.</p>
+      </div>
+      <div class="tag-cloud rv d2">
+        <span class="atag">Wedding</span><span class="atag">Drone Shoots</span>
+        <span class="atag">Portraits</span><span class="atag">Maternity</span>
+        <span class="atag">Fashion</span><span class="atag">Newborn &amp; Kids</span>
+        <span class="atag">Commercial</span><span class="atag">Videography</span>
+        <span class="atag">24 / 7 Available</span><span class="atag">Location Scouting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec" aria-labelledby="contact-h">
+  <div class="contact-grid">
+    <div>
+      <div class="rv">
+        <span class="s-tag">Get in Touch</span>
+        <h2 class="s-h" id="contact-h">Let's Create <em>Together</em></h2>
+        <div class="s-rule"></div>
+      </div>
+      <div class="c-block rv d1">
+        <span class="c-lbl">Studio Address</span>
+        <p class="c-val">Near Govt. Sr. Sec. School, Bambooflat<br>Stewertgunj, SH10 · Port Blair – 744107<br>Andaman &amp; Nicobar Islands, India</p>
+      </div>
+      <div class="c-block rv d1">
+        <span class="c-lbl">Phone</span>
+        <p class="c-val"><a href="tel:+913192000000">+91 3192 – XXXXXX</a></p>
+      </div>
+      <div class="c-block rv d2">
+        <span class="c-lbl">WhatsApp Booking</span>
+        <a href="https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20book%20a%20photography%20session%20with%20Mega%20Digital%20Studios." class="wa-btn" target="_blank" rel="noopener noreferrer">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      <div class="map-wrap rv d3">
+        <iframe title="Mega Digital Studios – Bambooflat, Port Blair on Google Maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.5!2d92.7265!3d11.6234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDM3JzI0LjMiTiA5MsKwNDMnMzUuNCJF!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="socials rv d3">
+        <a href="#" class="sico" aria-label="Instagram">IG</a>
+        <a href="#" class="sico" aria-label="Facebook">FB</a>
+        <a href="#" class="sico" aria-label="YouTube">YT</a>
+        <a href="#" class="sico" aria-label="Pinterest">PI</a>
+      </div>
+    </div>
+    <div class="rv d1">
+      <span class="s-tag">Book a Session</span>
+      <h3 style="font-family:var(--fh);font-size:2rem;font-weight:200;color:var(--cream);margin-bottom:2.5rem">Send a <em style="font-style:italic;color:var(--gold2)">Message</em></h3>
+      <div class="f-ok" id="fOk">✦ &nbsp;Thank you! We'll confirm your session within 24 hours.</div>
+      <form class="cform" id="cForm" novalidate>
+        <div class="f2">
+          <div class="fg"><label for="fn">Your Name *</label><input type="text" id="fn" name="name" placeholder="Full name" required/></div>
+          <div class="fg"><label for="fp">Phone Number *</label><input type="tel" id="fp" name="phone" placeholder="+91 XXXXX XXXXX" required/></div>
+        </div>
+        <div class="fg"><label for="fe">Email Address</label><input type="email" id="fe" name="email" placeholder="you@email.com"/></div>
+        <div class="fg">
+          <label for="fs">Service Required *</label>
+          <select id="fs" name="service" required>
+            <option value="" disabled selected>Select a service…</option>
+            <option>Wedding Photography</option><option>Pre-Wedding / Engagement</option>
+            <option>Events Photography</option><option>Portrait Session</option>
+            <option>Drone / Aerial Photography</option><option>Maternity Photography</option>
+            <option>Newborn Photography</option><option>Kids / Family Session</option>
+            <option>Fashion / Editorial</option><option>Product / Commercial</option>
+            <option>Videography</option><option>Other</option>
+          </select>
+        </div>
+        <div class="f2">
+          <div class="fg"><label for="fd">Preferred Date</label><input type="date" id="fd" name="date"/></div>
+          <div class="fg"><label for="fl">Location / Venue</label><input type="text" id="fl" name="location" placeholder="Venue or area name"/></div>
+        </div>
+        <div class="fg"><label for="fm">Your Vision</label><textarea id="fm" name="message" rows="4" placeholder="Describe your shoot — style, special requirements, inspiration, budget…"></textarea></div>
+        <button type="submit" class="f-btn"><span>Send Enquiry ✦</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="foot-top">
+    <div>
+      <p class="f-logo-txt">Mega <em>Digital</em> Studios</p>
+      <p class="f-tagline">Port Blair's finest photography studio — capturing timeless moments across the Andaman &amp; Nicobar Islands since 2012. Open 24 hours, 7 days a week.</p>
+    </div>
+    <div class="f-col">
+      <h6>Services</h6>
+      <ul>
+        <li><a href="#services">Wedding Photography</a></li><li><a href="#services">Drone &amp; Aerial</a></li>
+        <li><a href="#services">Events Coverage</a></li><li><a href="#services">Portrait &amp; Fashion</a></li>
+        <li><a href="#services">Maternity &amp; Newborn</a></li><li><a href="#services">Commercial</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h6>Studio</h6>
+      <ul>
+        <li><a href="#portfolio">Portfolio</a></li><li><a href="#pricing">Pricing</a></li>
+        <li><a href="#process">Our Process</a></li><li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Testimonials</a></li><li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h6>Contact</h6>
+      <ul>
+        <li><a href="#">Stewertgunj, Bambooflat</a></li><li><a href="#">Port Blair – 744107</a></li>
+        <li><a href="#">Andaman &amp; Nicobar Islands</a></li><li><a href="tel:+913192">+91 3192-XXXXXX</a></li>
+        <li><a href="https://wa.me/919999999999">WhatsApp Us</a></li><li><a href="#">Open 24 / 7</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-btm">
+    <span>© 2025 Mega Digital Studios. All rights reserved.</span>
+    <span>Rated <a href="#testimonials">4.7 ★</a> · JustDial &amp; WedMeGood · Port Blair, Andaman</span>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+/* ═══════════════════ LOADER ═══════════════════ */
+(function(){
+  const ldBar=document.getElementById('ldBar');
+  const ldPct=document.getElementById('ldPct');
+  gsap.to([document.getElementById('lw1'),document.getElementById('lw2'),document.getElementById('lw3')],
+    {y:0,opacity:1,duration:.65,stagger:.12,ease:'power3.out',delay:.1});
+  let v=0;
+  const iv=setInterval(()=>{
+    v+=Math.random()*15+3;
+    if(v>=100){v=100;clearInterval(iv);done()}
+    ldBar.style.width=v+'%';ldPct.textContent=Math.floor(v)+'%';
+  },110);
+  function done(){
+    setTimeout(()=>{
+      gsap.to('#loader',{yPercent:-100,duration:1.1,ease:'power4.inOut',
+        onComplete:()=>{document.getElementById('loader').style.display='none';boot()}});
+    },250);
+  }
+})();
+
+function boot(){
+  setupCursor();
+  setupNav();
+  setupHero();
+  setupHorizScroll();
+  setupReveal();
+  setupCounters();
+  setupTesti();
+  setupParallax();
+  setupMagnet();
+  setupForm();
+}
+
+/* ═══════════════════ CURSOR ═══════════════════ */
+function setupCursor(){
+  const dot=document.getElementById('cDot'),ring=document.getElementById('cRing');
+  if(!dot||!ring)return;
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY},{passive:true});
+  (function t(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;
+    dot.style.left=mx+'px';dot.style.top=my+'px';
+    ring.style.left=rx+'px';ring.style.top=ry+'px';
+    requestAnimationFrame(t)})();
+  document.querySelectorAll('a,button,.pc,.price-card,.svc-big,.svc-sm,.testi-card').forEach(el=>{
+    el.addEventListener('mouseenter',()=>ring.classList.add('expand'));
+    el.addEventListener('mouseleave',()=>ring.classList.remove('expand'));
+  });
+  document.querySelectorAll('input,textarea,select').forEach(el=>{
+    el.addEventListener('mouseenter',()=>ring.classList.add('shrink'));
+    el.addEventListener('mouseleave',()=>ring.classList.remove('shrink'));
+  });
+}
+
+/* ═══════════════════ NAV ═══════════════════ */
+function setupNav(){
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('stuck',scrollY>80),{passive:true});
+  const ham=document.getElementById('ham'),mob=document.getElementById('mobMenu');
+  ham.addEventListener('click',()=>{
+    ham.classList.toggle('open');
+    const open=mob.classList.toggle('show');
+    document.body.style.overflow=open?'hidden':'';
+  });
+  mob.querySelectorAll('.ml').forEach(a=>a.addEventListener('click',()=>{
+    ham.classList.remove('open');mob.classList.remove('show');document.body.style.overflow='';
+  }));
+}
+
+/* ═══════════════════ HERO ═══════════════════ */
+function setupHero(){
+  const words=document.querySelectorAll('.hero-h1 .wd');
+  gsap.fromTo(words,{yPercent:105,opacity:0},{yPercent:0,opacity:1,duration:1.1,stagger:.06,ease:'power4.out',delay:.15});
+  gsap.fromTo('.hero-eyebrow',{y:18,opacity:0},{y:0,opacity:1,duration:.8,ease:'power3.out',delay:.1});
+  gsap.fromTo('.hero-sub-in',{y:28,opacity:0},{y:0,opacity:1,duration:.9,ease:'power3.out',delay:.85});
+  gsap.fromTo('.btn-primary,.btn-secondary',{y:16,opacity:0},{y:0,opacity:1,stagger:.1,duration:.8,ease:'power3.out',delay:1});
+  gsap.fromTo('.hero-side',{opacity:0,x:8},{opacity:1,x:0,duration:1,ease:'power2.out',delay:1.5});
+  gsap.to('#heroBg',{yPercent:22,ease:'none',
+    scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:1.8}});
+}
+
+/* ═══════════════════ HORIZONTAL SCROLL ═══════════════════ */
+function setupHorizScroll(){
+  const outer=document.getElementById('portOuter');
+  const track=document.getElementById('portTrack');
+  if(!outer||!track)return;
+  function scrollAmt(){return -(track.scrollWidth-window.innerWidth+90)}
+  ScrollTrigger.create({
+    trigger:outer,start:'top top',
+    end:()=>'+='+(Math.abs(scrollAmt())*1.7),
+    pin:'#portSticky',scrub:1.2,
+    onUpdate:self=>{gsap.set(track,{x:scrollAmt()*self.progress})}
+  });
+}
+
+/* ═══════════════════ SCROLL REVEAL ═══════════════════ */
+function setupReveal(){
+  document.querySelectorAll('.rv').forEach(el=>{
+    ScrollTrigger.create({trigger:el,start:'top 88%',once:true,
+      onEnter:()=>el.classList.add('in')});
+  });
+}
+
+/* ═══════════════════ COUNTERS ═══════════════════ */
+function setupCounters(){
+  document.querySelectorAll('.s-big').forEach(el=>{
+    ScrollTrigger.create({trigger:el,start:'top 85%',once:true,onEnter:()=>{
+      const target=parseFloat(el.dataset.n),sfx=el.dataset.s||'',dec=parseInt(el.dataset.d||'0');
+      gsap.fromTo({v:0},{v:target},{duration:2.2,ease:'power3.out',
+        onUpdate:function(){el.textContent=this.targets()[0].v.toFixed(dec)+sfx}});
+    }});
+  });
+}
+
+/* ═══════════════════ TESTIMONIALS ═══════════════════ */
+let tIdx=0;
+function setupTesti(){updateTesti()}
+function getVis(){return innerWidth<768?1:3}
+function maxT(){return Math.max(0,document.getElementById('testiTrack').children.length-getVis())}
+function slideTesti(d){tIdx=Math.max(0,Math.min(tIdx+d,maxT()));updateTesti()}
+function updateTesti(){
+  const tr=document.getElementById('testiTrack');if(!tr)return;
+  const w=tr.children[0].getBoundingClientRect().width+24;
+  gsap.to(tr,{x:-(tIdx*w),duration:.85,ease:'power4.out'});
+  const p=document.getElementById('testiProg');
+  if(p)p.style.width=(tIdx/Math.max(1,maxT())*100)+'%';
+}
+window.addEventListener('resize',()=>{tIdx=Math.min(tIdx,maxT());updateTesti()},{passive:true});
+
+/* ═══════════════════ PARALLAX ═══════════════════ */
+function setupParallax(){
+  gsap.fromTo('.about-img img',{yPercent:-4},{yPercent:4,ease:'none',
+    scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:1.2}});
+}
+
+/* ═══════════════════ LIGHTBOX ═══════════════════ */
+function openLb(card){
+  const img=card.querySelector('img');
+  document.getElementById('lbImg').src=img.src.replace(/w=\d+/,'w=1800');
+  document.getElementById('lbCap').textContent=card.dataset.title+' — '+card.dataset.cat;
+  const lb=document.getElementById('lb');lb.classList.add('on');
+  gsap.fromTo(lb,{opacity:0},{opacity:1,duration:.4,ease:'power2.out'});
+  document.body.style.overflow='hidden';
+}
+function closeLb(){
+  const lb=document.getElementById('lb');
+  gsap.to(lb,{opacity:0,duration:.3,ease:'power2.in',onComplete:()=>{
+    lb.classList.remove('on');document.getElementById('lbImg').src='';document.body.style.overflow='';
+  }});
+}
+document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)closeLb()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+
+/* ═══════════════════ MAGNETIC EFFECT ═══════════════════ */
+function setupMagnet(){
+  document.querySelectorAll('.btn-primary,.btn-secondary,.nav-cta,.price-btn,.wa-btn,.f-btn,.testi-btn').forEach(el=>{
+    el.addEventListener('mousemove',function(e){
+      const r=this.getBoundingClientRect();
+      const x=(e.clientX-r.left-r.width/2)*.2;
+      const y=(e.clientY-r.top-r.height/2)*.2;
+      gsap.to(this,{x,y,duration:.45,ease:'power2.out'});
+    });
+    el.addEventListener('mouseleave',function(){
+      gsap.to(this,{x:0,y:0,duration:.7,ease:'elastic.out(1,.5)'});
+    });
+  });
+}
+
+/* ═══════════════════ FORM ═══════════════════ */
+function setupForm(){
+  document.getElementById('cForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    const btn=this.querySelector('.f-btn span');btn.textContent='Sending…';
+    setTimeout(()=>{
+      gsap.to(this,{opacity:0,y:-12,duration:.4,ease:'power2.in',onComplete:()=>{
+        this.style.display='none';
+        const ok=document.getElementById('fOk');ok.style.display='block';
+        gsap.fromTo(ok,{opacity:0,y:10},{opacity:1,y:0,duration:.6,ease:'power3.out'});
+      }});
+    },1000);
+  });
+}
+
+/* ═══════════════════ ACTIVE NAV ═══════════════════ */
+gsap.utils.toArray('section[id], div[id="portfolio"]').forEach(sec=>{
+  ScrollTrigger.create({trigger:sec,start:'top 55%',end:'bottom 55%',
+    onToggle:s=>{
+      document.querySelectorAll('.nav-links a').forEach(a=>{
+        const match=a.getAttribute('href')==='#'+sec.id;
+        if(s.isActive&&match)a.style.color='var(--gold2)';
+        else if(!s.isActive&&match)a.style.color='';
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>
